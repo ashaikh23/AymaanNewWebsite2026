@@ -76,22 +76,43 @@ const getWorkout = (workout?: HevyAPIWorkout) => {
   };
 };
 
-export const getWorkouts = async () => {
-  const [workoutsCountResponse, workoutsResponse] = await Promise.all([
-    instance.get<HevyAPIWorkoutsCountResponse>("/workouts/count"),
-    instance.get<HevyAPIWorkoutsResponse>("/workouts"),
-  ]);
+export const getWorkouts = async (): Promise<Workouts> => {
+  // Return empty workouts if API key is not configured
+  if (!process.env.HEVY_API_KEY) {
+    return {
+      count: 0,
+      weights: null,
+      boxing: null,
+    };
+  }
 
-  const boxing = workoutsResponse.data.workouts.find(
-    (workout) => workout.exercises.length === WORKOUTS_BOXING_EXERCISES
-  );
-  const weights = workoutsResponse.data.workouts.find(
-    (workout) => workout.exercises.length > WORKOUTS_BOXING_EXERCISES
-  );
+  try {
+    const [workoutsCountResponse, workoutsResponse] = await Promise.all([
+      instance.get<HevyAPIWorkoutsCountResponse>("/workouts/count"),
+      instance.get<HevyAPIWorkoutsResponse>("/workouts"),
+    ]);
 
-  return {
-    boxing: getWorkout(boxing),
-    weights: getWorkout(weights),
-    count: workoutsCountResponse.data.workout_count,
-  };
+    const boxing = workoutsResponse.data.workouts.find(
+      (workout) => workout.exercises.length === WORKOUTS_BOXING_EXERCISES
+    );
+    const weights = workoutsResponse.data.workouts.find(
+      (workout) => workout.exercises.length > WORKOUTS_BOXING_EXERCISES
+    );
+
+    return {
+      boxing: getWorkout(boxing),
+      weights: getWorkout(weights),
+      count: workoutsCountResponse.data.workout_count,
+    };
+  } catch (error) {
+    // Log error in development, but return empty workouts to prevent page crash
+    if (process.env.NODE_ENV === "development") {
+      console.error("Failed to fetch workouts from Hevy API:", error);
+    }
+    return {
+      count: 0,
+      weights: null,
+      boxing: null,
+    };
+  }
 };

@@ -7,6 +7,7 @@ import { getPosts } from "@/lib/posts";
 import { POSTS_LIMIT } from "@/utils/const";
 
 import { About } from "@/sections/about";
+import { Companies } from "@/sections/companies";
 import { Commits } from "@/sections/commits";
 import { Experience } from "@/sections/experience";
 import { Posts } from "@/sections/posts";
@@ -27,6 +28,7 @@ const Home = async () => {
   return (
     <>
       <About />
+      <Companies />
       <Experience />
       <Commits />
       <Posts posts={posts} />

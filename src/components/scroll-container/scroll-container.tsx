@@ -41,7 +41,7 @@ const ScrollContainer = ({ children, className }: ScrollContainerProps) => {
       <motion.main
         className={cn(
           className,
-          "min-h-screen overflow-hidden pb-48 bg-white selection:bg-blue-500 selection:text-white origin-bottom"
+          "min-h-screen overflow-hidden pb-48 bg-white selection:bg-blue-500 selection:text-white origin-bottom transition-colors duration-300"
         )}
         style={{
           scale,

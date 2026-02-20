@@ -19,7 +19,7 @@ const Section = ({ children, spacing = "default", ...props }: SectionProps) => {
   return (
     <section
       className={cn(
-        "max-w-2xl px-6 sm:px-12",
+        "max-w-2xl mx-auto px-6 sm:px-12",
         sectionSpacingClassNames[spacing]
       )}
       {...props}
