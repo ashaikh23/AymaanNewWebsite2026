@@ -47,3 +47,30 @@
   width: max-content;
   animation: companies-marquee 20s linear infinite;
 }
+
+/* DevTools open Easter egg: blank blue screen + message */
+[data-devtools-open] body {
+  background: var(--color-blue-500);
+  color: white;
+}
+
+[data-devtools-open] body > * {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+[data-devtools-open] body::after {
+  content: "Hacker? You opened DevTools. Nice.";
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--color-blue-500);
+  color: white;
+}
