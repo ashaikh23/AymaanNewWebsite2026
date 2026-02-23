@@ -12,6 +12,7 @@ import copy from "@/copy/en-EN.json";
 import { cn } from "@/utils/helpers";
 import { APP_URL } from "@/utils/const";
 
+import { CustomCursor } from "@/components/custom-cursor";
 import { ScrollContainer } from "@/components/scroll-container";
 
 const sans = localFont({
@@ -108,6 +109,7 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
   return (
     <html lang={locale} className="scroll-smooth">
       <body className="antialiased bg-blue-500 text-gray-600 transition-colors duration-300">
+        <CustomCursor />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ScrollContainer
             className={cn(sans.variable, serif.variable, mono.variable)}

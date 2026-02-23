@@ -32,3 +32,18 @@
 @utility content-auto {
   content-visibility: auto;
 }
+
+@keyframes companies-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.companies-marquee {
+  display: flex;
+  width: max-content;
+  animation: companies-marquee 20s linear infinite;
+}

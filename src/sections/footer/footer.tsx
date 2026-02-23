@@ -15,7 +15,6 @@ const Footer = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
     const t = useTranslations();
 
     const socials = [
-      { label: t("footer.email"), value: accounts.emailAddress },
       { label: t("footer.linkedin"), href: links.linkedin },
       { label: t("footer.github"), href: links.github },
       { label: t("footer.x"), href: links.x },
@@ -29,17 +28,22 @@ const Footer = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
         {...props}
       >
         <div className="mx-auto w-full max-w-xl px-6 sm:px-0 space-y-24">
-          <div className="grid grid-cols-1 sm:grid-cols-12 gap-16 sm:gap-6">
-            <div className="col-span-1 sm:col-span-3">
-              <Typography variant="subtitle1" color="inherit">
-                {t("footer.contact")}
-              </Typography>
-            </div>
+          <div className="space-y-8">
+            <Typography variant="body2" color="inherit">
+              {t("footer.intro")}
+            </Typography>
+            <div className="grid grid-cols-1 sm:grid-cols-12 gap-16 sm:gap-6">
+              <div className="col-span-1 sm:col-span-3">
+                <Typography variant="subtitle1" color="inherit">
+                  {t("footer.contact")}
+                </Typography>
+              </div>
 
-            <div className="col-span-1 sm:col-span-9 space-y-3">
-              {socials.map((social) => (
-                <FooterListItem key={social.label} {...social} />
-              ))}
+              <div className="col-span-1 sm:col-span-9 space-y-3">
+                {socials.map((social) => (
+                  <FooterListItem key={social.label} {...social} />
+                ))}
+              </div>
             </div>
           </div>
 

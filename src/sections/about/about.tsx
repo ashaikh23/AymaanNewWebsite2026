@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useState, type ReactNode } from "react";
 
-import { titleAnimation } from "@/utils/keyframes";
+import { RotatingText } from "@/components/rotating-text";
 import { links } from "@/utils/links";
 
 import { Section } from "@/components/section";
@@ -21,31 +21,10 @@ const About = () => {
     ui: (chunks: ReactNode) => (
       <span className="relative inline-block text-blue-500">{chunks}</span>
     ),
-    animation: (chunks: ReactNode) => (
-      <span className="relative inline-block">{chunks}</span>
-    ),
+    rotating: () => <RotatingText />,
     serif: (chunks: ReactNode) => (
       <span className="font-serif italic">{chunks}</span>
     ),
-    letterDown: (chunks: ReactNode) => (
-      <motion.span
-        variants={titleAnimation.letterDown}
-        transition={titleAnimation.transition}
-        className="absolute left-0 top-0 inline-block"
-      >
-        {chunks}
-      </motion.span>
-    ),
-    letterUp: (chunks: ReactNode) => (
-      <motion.span
-        variants={titleAnimation.letterUp}
-        transition={titleAnimation.transition}
-        className="inline-block"
-      >
-        {chunks}
-      </motion.span>
-    ),
-
     url1: (chunks: ReactNode) => (
       <Link
         href={links.qed}
@@ -79,6 +58,46 @@ const About = () => {
     url4: (chunks: ReactNode) => (
       <Link
         href={links.goodreads}
+        className="text-blue-500"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {chunks}
+      </Link>
+    ),
+    url5: (chunks: ReactNode) => (
+      <Link
+        href={links.research}
+        className="text-blue-500"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {chunks}
+      </Link>
+    ),
+    url6: (chunks: ReactNode) => (
+      <Link
+        href={links.fidelity}
+        className="text-blue-500"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {chunks}
+      </Link>
+    ),
+    url7: (chunks: ReactNode) => (
+      <Link
+        href={links.verizon}
+        className="text-blue-500"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {chunks}
+      </Link>
+    ),
+    url8: (chunks: ReactNode) => (
+      <Link
+        href={links.billiards}
         className="text-blue-500"
         target="_blank"
         rel="noopener noreferrer"
@@ -129,6 +148,12 @@ const About = () => {
           </Typography>
           <Typography variant="body1">
             {t.rich("about.description.2", renderers)}
+          </Typography>
+          <Typography variant="body1">
+            {t.rich("about.description.3", renderers)}
+          </Typography>
+          <Typography variant="body1">
+            {t.rich("about.description.4", renderers)}
           </Typography>
         </div>
       </motion.div>

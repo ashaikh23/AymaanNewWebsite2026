@@ -12,7 +12,7 @@ export type ButtonProps = {
 const buttonVariantClassNames: ButtonVariantMapping = {
   transparent: "cursor-pointer",
   default:
-    "cursor-pointer rounded-sm px-2 py-1 text-gray-600 hover:bg-blue-500 hover:text-white",
+    "cursor-pointer rounded-sm px-2 py-1 text-gray-600 hover:bg-blue-500 hover:text-white transform hover:scale-105 hover:shadow-md",
 };
 
 const buttonActiveClassNames: ButtonVariantMapping = {
@@ -30,7 +30,7 @@ const Button = ({
   return (
     <button
       className={cn(
-        "transition-colors ease-in",
+        "transition-colors transition-transform ease-in",
         buttonVariantClassNames[variant],
         active ? buttonActiveClassNames[variant] : null,
         startIcon ? "group flex items-center gap-1" : null

@@ -2,6 +2,10 @@
 
 import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
+import Link from "next/link";
+
+import { links } from "@/utils/links";
+
 import { Section } from "@/components/section";
 import { Typography } from "@/components/typography";
 
@@ -36,6 +40,42 @@ const Companies = () => {
         logo: `https://cdn.brandfetch.io/verizon.com/w/400/h/400/type/logo?c=${BRANDFETCH_CLIENT_ID}`,
         alt: "Verizon logo",
         gradient: "linear-gradient(135deg, #CD040B 0%, #FF6B6B 100%)", // Verizon red gradient
+      },
+      {
+        name: "IBM",
+        logo: `https://cdn.brandfetch.io/ibm.com/w/400/h/400/type/logo?c=${BRANDFETCH_CLIENT_ID}`,
+        alt: "IBM logo",
+        gradient: "linear-gradient(135deg, #0F62FE 0%, #4589FF 100%)", // IBM blue gradient
+      },
+      {
+        name: "Dartmouth College",
+        logo: `https://cdn.brandfetch.io/dartmouth.edu/w/400/h/400/type/logo?c=${BRANDFETCH_CLIENT_ID}`,
+        alt: "Dartmouth College logo",
+        gradient: "linear-gradient(135deg, #00693E 0%, #009E5F 100%)", // Dartmouth green gradient
+      },
+      {
+        name: "R42 Group",
+        logo: `https://cdn.brandfetch.io/r42group.com/w/400/h/400/type/logo?c=${BRANDFETCH_CLIENT_ID}`,
+        alt: "R42 Group logo",
+        gradient: "linear-gradient(135deg, #111827 0%, #4B5563 100%)", // Dark neutral gradient
+      },
+      {
+        name: "Cornell University",
+        logo: `https://cdn.brandfetch.io/cornell.edu/w/400/h/400?c=${BRANDFETCH_CLIENT_ID}`,
+        alt: "Cornell University logo",
+        gradient: "linear-gradient(135deg, #B31B1B 0%, #E11D48 100%)", // Cornell red gradient
+      },
+      {
+        name: "University of Massachusetts Amherst",
+        logo: `https://cdn.brandfetch.io/umass.edu/w/400/h/400/type/logo?c=${BRANDFETCH_CLIENT_ID}`,
+        alt: "University of Massachusetts Amherst logo",
+        gradient: "linear-gradient(135deg, #881C1C 0%, #9F1239 100%)", // UMass maroon gradient
+      },
+      {
+        name: "Hack Club",
+        logo: `https://cdn.brandfetch.io/hackclub.com/w/400/h/400/type/logo?c=${BRANDFETCH_CLIENT_ID}`,
+        alt: "Hack Club logo",
+        gradient: "linear-gradient(135deg, #E11D48 0%, #F97316 100%)", // Hack Club warm gradient
       },
     ],
     [BRANDFETCH_CLIENT_ID]
@@ -74,6 +114,8 @@ const Companies = () => {
     }
   }, [hoveredCompany, companies]);
 
+  const marqueeCompanies = [...companies, ...companies];
+
   return (
     <Section id="companies" spacing="default">
       <div className="grid grid-cols-1 sm:grid-cols-12 gap-16 sm:gap-6">
@@ -82,36 +124,62 @@ const Companies = () => {
         </div>
 
         <div className="col-span-1 sm:col-span-9">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 items-center justify-items-center">
-            {companies.map((company) => (
-              <div
-                key={company.name}
-                className="flex items-center justify-center w-full h-20 transition-all duration-300 opacity-80 hover:opacity-100 cursor-pointer"
-                onMouseEnter={() => setHoveredCompany(company.name)}
-                onMouseLeave={() => setHoveredCompany(null)}
-              >
-                {!imageErrors[company.name] ? (
-                  <Image
-                    src={company.logo}
-                    alt={company.alt}
-                    width={160}
-                    height={64}
-                    className="max-h-16 max-w-full object-contain"
-                    onError={() => {
-                      setImageErrors((prev) => ({
-                        ...prev,
-                        [company.name]: true,
-                      }));
-                    }}
-                    unoptimized
-                  />
-                ) : (
-                  <div className="text-gray-400 font-medium text-sm text-center">
-                    {company.name}
-                  </div>
-                )}
-              </div>
-            ))}
+          <div className="overflow-hidden">
+            <div className="companies-marquee gap-12 items-center">
+              {marqueeCompanies.map((company, index) => (
+                <div
+                  key={`${company.name}-${index}`}
+                  className="flex items-center justify-center h-20 cursor-pointer"
+                  onMouseEnter={() => setHoveredCompany(company.name)}
+                  onMouseLeave={() => setHoveredCompany(null)}
+                >
+                  {!imageErrors[company.name] ? (
+                    company.name === "Cornell University" ? (
+                      <Link
+                        href={links.cornell}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Cornell University"
+                      >
+                        <Image
+                          src={company.logo}
+                          alt={company.alt}
+                          width={200}
+                          height={80}
+                          className="max-h-16 max-w-full object-contain"
+                          onError={() => {
+                            setImageErrors((prev) => ({
+                              ...prev,
+                              [company.name]: true,
+                            }));
+                          }}
+                          unoptimized
+                        />
+                      </Link>
+                    ) : (
+                      <Image
+                        src={company.logo}
+                        alt={company.alt}
+                        width={200}
+                        height={80}
+                        className="max-h-16 max-w-full object-contain"
+                        onError={() => {
+                          setImageErrors((prev) => ({
+                            ...prev,
+                            [company.name]: true,
+                          }));
+                        }}
+                        unoptimized
+                      />
+                    )
+                  ) : (
+                    <div className="text-gray-400 font-medium text-sm text-center">
+                      {company.name}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

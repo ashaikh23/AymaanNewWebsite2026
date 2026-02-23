@@ -34,13 +34,18 @@ const AppBar = ({ ...props }: HTMLAttributes<HTMLElement>) => {
       icon: <SvgIconHouse size="small" />,
     },
     {
+      href: "/resume",
+      label: "Résumé",
+      icon: <SvgIconNotepad size="small" />,
+    },
+    {
       href: "/#experience",
       label: t("appBar.experiences"),
       icon: <SvgIconTrophy size="small" />,
     },
     {
-      href: "/writings",
-      label: t("appBar.writings"),
+      href: "/projects",
+      label: t("appBar.projects"),
       icon: <SvgIconNotepad size="small" />,
     },
     {

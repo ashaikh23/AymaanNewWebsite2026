@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "Marius Bălaj",
+    "title": "Aymaan Shaikh",
     "description": "I’m a UI engineer turned founder with a background in startups. I co-founded QED in 2021, grew it, and eventually sold it to The Sandbox. Now, I’m focused on building in AI."
   },
   "appBar": {
@@ -10,51 +10,189 @@
     "intro": "Intro",
     "experiences": "Experiences",
     "writings": "Writings",
+    "projects": "Projects",
     "bookshelf": "Bookshelf",
     "contact": "Contact"
   },
   "about": {
-    "title": "<serif><ui><animation><letterDown>A</letterDown><letterUp>U</letterUp></animation>I</ui> engineer</serif> turned <serif>founder</serif>.\nOne exit behind me, <serif>now building in <ai>AI</ai></serif>.",
+    "title": "<serif><ui><rotating></rotating></ui> engineer</serif> turned <serif>builder</serif>.\nShipping products, <serif>where ML meets real <ai>users</ai></serif>.",
     "description": {
-      "0": "I’m a UI engineer turned founder with a background in startups — from blockchain pioneers to larger tech companies. I co-founded <url1><serif>QED</serif></url1> in 2021, grew it, and eventually sold it to <url2><serif>Sandbox</serif></url2>.",
-      "1": "Outside of work, I box. I’m the president of <url3><serif>Viitorul Boxing Club</serif></url3>, where I train and help others do the same. I also <url4><serif>read</serif></url4> a lot — it keeps me sharp.",
-      "2": "Now, I’m focused on building in AI."
+      "0": "I’m <serif>Aymaan Shaikh</serif> — a developer obsessed with using AI + “big data” to solve real, high-impact problems.",
+      "1": "I’ve worked across cloud infrastructure, applied ML, and <url5><serif>AI research</serif></url5> — touching everything from <url6><serif>finance</serif></url6> and med-ML to <url7><serif>telecom</serif></url7>, quant trading, AI agents/bots, social good, and a handful of startups — from production systems to experimentation-heavy labs. Along the way, I’ve done a few fellowships, founded a nonprofit, and I’m big on volunteering and giving back.",
+      "2": "On campus, I’m the founder/president of <url8><serif>Cornell’s Billiards Club</serif></url8> — my favorite way to train precision and accuracy. I’ve also been a course assistant for technical classes and a CS mentor.",
+      "3": "Outside the screen: rock climbing and tennis, with a side of badminton and soccer.",
+      "4": "Now I’m focused on building in AI — the kind of work that ships, scales, and actually matters."
     }
+  },
+  "education": {
+    "title": "Education",
+    "courseworkTitle": "Coursework",
+    "coursework": {
+      "1": "Algorithms and Data Structures for Applications",
+      "2": "Applied Machine Learning",
+      "3": "Calculus",
+      "4": "Computer Crime Law",
+      "5": "Computer Systems Principles",
+      "6": "Don't Sell Sand in the Desert (GTM Strategy - MBA)",
+      "7": "Human-Computer Interaction & Design",
+      "8": "Introduction to Computation (Discrete Mathematics)",
+      "9": "Language Modeling (Computational Natural Language Modeling)",
+      "10": "Linear Algebra",
+      "11": "Machine Learning Engineering",
+      "12": "Machine Learning Hardware and Systems",
+      "13": "Operating Systems",
+      "14": "Product Studio",
+      "15": "Programming Methodology",
+      "16": "Reasoning Under Uncertainty",
+      "17": "Social Issues in Computing",
+      "18": "Software Engineering Project Management",
+      "19": "Software Entrepreneurship",
+      "20": "Startup Studio",
+      "21": "Statistics",
+      "22": "Theory and Practice of Software Engineering",
+      "23": "Ubiquitous Computing (Machine Perception & Signal Processing)"
+    },
+    "entries": {
+      "1": {
+        "school": "Cornell University",
+        "location": "New York, NY",
+        "degree": "Master's in Computer Science",
+        "date": "May 2026"
+      },
+      "2": {
+        "school": "University of Massachusetts Amherst",
+        "location": "Amherst, MA",
+        "degree": "Bachelor's in Computer Science",
+        "date": "May 2025"
+      }
+    }
+  },
+  "technicalSkills": {
+    "title": "Technical Skills",
+    "languages": "Java, Python, C, C++, SQL, HTML, CSS, JavaScript/TypeScript.",
+    "frameworks": "TensorFlow, PyTorch, React.js, Angular, Spring Boot, Flask.",
+    "technologies": "AWS, Azure, Docker, Terraform, Git, REST, CI/CD, Jenkins."
   },
   "experience": {
     "today": "Today",
-    "title": "Experience",
+    "industryTitle": "Industry Experience",
+    "academiaTitle": "Academia Experience",
     "jobs": {
-      "1": {
-        "title": "The Sandbox",
-        "role": "Managing Director (Romania)"
+      "industry": {
+        "1": {
+          "title": "Microsoft",
+          "role": "Data Scientist Intern",
+          "duration": "2025",
+          "description": "\u2022 Engineered a multi-agent AI system using Azure AI Foundry and MCP to orchestrate context-aware telemetry and generate automated dynamic reports."
+        },
+        "2": {
+          "title": "Verizon",
+          "role": "AI/ML Engineering Intern",
+          "duration": "2024",
+          "description": "\u2022 Performed geospatial analysis on fiber and 5G networks identifying valuable assets and optimization insights through interactive mapping."
+        },
+        "3": {
+          "title": "Fidelity Investments",
+          "role": "Full-Stack SWE Intern",
+          "duration": "2022 \u2013 2023",
+          "description": "\u2022 Developed a Splunk-based SSO widget, scaled a Tridion CMS integration company-wide, and modernized critical RESTful APIs for a 529 Savings Plan application."
+        }
       },
-      "2": {
-        "title": "QED (acquired by The Sandbox)",
-        "role": "Co-Founder",
-        "duration": "2022 ~ 2025"
-      },
-      "3": {
-        "title": "stake.fish / f2pool.io",
-        "role": "Senior Software Engineer",
-        "duration": "2019 ~ 2022"
-      },
-      "4": {
-        "title": "Alacritylaw",
-        "role": "Lead Software Engineer",
-        "duration": "2017 ~ 2019"
+      "academia": {
+        "1": {
+          "title": "Cornell University",
+          "role": "Student Ambassador"
+        },
+        "2": {
+          "title": "MIT-IBM Watson AI Lab",
+          "role": "Research",
+          "duration": "2022 \u2013 2023"
+        },
+        "3": {
+          "title": "Dartmouth College",
+          "role": "Research",
+          "duration": "2025"
+        },
+        "4": {
+          "title": "UMass Amherst CICS",
+          "role": "Research",
+          "duration": "2025"
+        }
       }
     }
   },
   "commits": {
     "viewOnGitHub": "View on GitHub"
   },
+  "achievements": {
+    "title": "Achievements",
+    "entries": {
+      "1": {
+        "text": "Ranked 98th Percentile - National Cyber League Cyber Skyline Team Cybersecurity CTF Competition",
+        "date": "May 2022"
+      },
+      "2": {
+        "text": "Semi-Finalist - Tenth Annual Difference Maker $50,000 Idea Challenge (ChainBank)",
+        "date": "Mar 2022"
+      },
+      "3": {
+        "text": "Difference Maker Digital Federal Credit Union / Manning Innovation Contest Semi-Finalist",
+        "date": "Dec 2021"
+      },
+      "4": {
+        "text": "US Cyber Challenge: Cyber Quests Spring 2025 (U.S. & Global Rank: #20)",
+        "date": "Spring 2025"
+      },
+      "5": {
+        "text": "Fidelity Investments Design Contest Finalist",
+        "date": "Feb 2023"
+      },
+      "6": {
+        "text": "Finalist RSM Automation Challenge (RPA) Competition",
+        "date": "Jan 2022"
+      },
+      "7": {
+        "text": "Microsoft Global Intern Hackathon 2025 - 3rd Place",
+        "date": "July 2025"
+      }
+    }
+  },
+  "hobbiesAndInterests": {
+    "title": "Hobbies and Interests",
+    "entries": {
+      "1": {
+        "title": "3D Modeling",
+        "subtitle": "Maya, SketchUp, Onshape, TinkerCad",
+        "description": "When I thought about a simple concept or a complex invention, I could always see myself using my idea in my daily life. However, I wanted to bring my imagination to reality. Welcome to the world of 3D Modeling. In this digital realm, I'm able to take my crazy breakthroughs and visualize them through a 3D scale. Then, through the power of 3D printing, I'm able to push the digital to the physical."
+      },
+      "2": {
+        "title": "Badminton",
+        "subtitle": "Fun Fact: My favorite player is Lin Dan!",
+        "description": "Badminton is a sport that requires immense stamina and agility. When I started playing badminton, I wasn't the best player, but I always found it fun to smash and WIN! Whether I'm playing at my local park or sweating in an intense tournament, playing badminton is always F-U-N!"
+      }
+    }
+  },
+  "certificates": {
+    "title": "Certificates",
+    "entries": {
+      "1": {
+        "name": "Cloud Computing Basics (Cloud 101)",
+        "provider": "Coursera"
+      },
+      "2": {
+        "name": "Managing Machine Learning Projects with Google Cloud",
+        "provider": "Google Cloud Training Online"
+      }
+    }
+  },
   "posts": {
-    "title": "Writings",
+    "title": "Projects",
     "author": " - {author}",
     "moreWritings": "More writings",
+    "moreProjects": "More projects",
     "backToWritings": "Back to writings",
-    "sometimesIWrite": "Sometimes I <serif>write</serif>."
+    "sometimesIWrite": "Sometimes I <serif>write</serif>.",
+    "sometimesIBuild": "Sometimes I <serif>build</serif>."
   },
   "stats": {
     "latestTrainingSessions": "Latest training sessions",
@@ -85,13 +223,14 @@
     "backToHome": "Back to home"
   },
   "footer": {
+    "intro": "If you're interested in working on a project or communicating with me, don't hesitate to contact me!",
     "contact": "Contact",
     "email": "Email",
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "x": "X",
     "copyToClipboard": "Copy to clipboard",
-    "copyright": "© {year} Marius Balaj",
-    "quote": "The <serif>starry heavens</serif> above me and <serif>the moral law</serif> within me."
+    "copyright": "© {year} Aymaan Shaikh",
+    "quote": "<serif>Stay hungry, stay foolish.</serif> - <serif>Steve Jobs</serif>"
   }
 }
