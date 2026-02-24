@@ -74,3 +74,18 @@
   background: var(--color-blue-500);
   color: white;
 }
+
+/* Word hover scale: word grows on hover, resets when not hovering */
+.word-hover-scale {
+  display: inline-block;
+  transition: transform 0.2s ease-out;
+  transform-origin: center bottom;
+}
+.word-hover-scale:hover {
+  transform: scale(1.15);
+}
+@media (prefers-reduced-motion: reduce) {
+  .word-hover-scale:hover {
+    transform: none;
+  }
+}

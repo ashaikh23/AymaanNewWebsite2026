@@ -10,7 +10,6 @@ const sitemap = (): MetadataRoute.Sitemap => {
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${APP_URL}/` },
-    { url: `${APP_URL}/bookshelf/` },
     { url: `${APP_URL}/projects/` },
     { url: `${APP_URL}/resume/` },
     { url: `${APP_URL}/writings/` },

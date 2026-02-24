@@ -3,11 +3,13 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #6e7394;
+  background-color: var(--color-blue-500, #0e63ff);
   pointer-events: none;
   transform: translate(-50%, -50%);
   z-index: 99999;
-  transition: opacity 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    background-color 0.2s ease;
   opacity: 0;
   will-change: transform;
 }
@@ -16,7 +18,20 @@
   opacity: 1;
 }
 
+.custom-cursor.over-blue {
+  background-color: white;
+}
+
 /* Hide default cursor */
 * {
   cursor: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor {
+    display: none !important;
+  }
+  * {
+    cursor: auto !important;
+  }
 }

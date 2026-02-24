@@ -40,26 +40,43 @@ const Experience = () => {
     },
   ];
 
-  const academiaJobs = [
+  const researchJobs = [
     {
-      title: t("experience.jobs.academia.1.title"),
-      role: t("experience.jobs.academia.1.role"),
+      title: t("experience.jobs.research.1.title"),
+      role: t("experience.jobs.research.1.role"),
+      duration: t("experience.jobs.research.1.duration"),
+      description: t("experience.jobs.research.1.description"),
+    },
+    {
+      title: t("experience.jobs.research.2.title"),
+      role: t("experience.jobs.research.2.role"),
+      duration: t("experience.jobs.research.2.duration"),
+      description: t("experience.jobs.research.2.description"),
+    },
+    {
+      title: t("experience.jobs.research.3.title"),
+      role: t("experience.jobs.research.3.role"),
+      duration: t("experience.jobs.research.3.duration"),
+      description: t("experience.jobs.research.3.description"),
+    },
+    {
+      title: t("experience.jobs.research.4.title"),
+      role: t("experience.jobs.research.4.role"),
+      duration: t("experience.jobs.research.4.duration"),
+      description: t("experience.jobs.research.4.description"),
+    },
+  ];
+
+  const ambassadorshipsJobs = [
+    {
+      title: t("experience.jobs.ambassadorships.1.title"),
+      role: t("experience.jobs.ambassadorships.1.role"),
       href: links.cornell,
     },
     {
-      title: t("experience.jobs.academia.3.title"),
-      role: t("experience.jobs.academia.3.role"),
-      duration: t("experience.jobs.academia.3.duration"),
-    },
-    {
-      title: t("experience.jobs.academia.4.title"),
-      role: t("experience.jobs.academia.4.role"),
-      duration: t("experience.jobs.academia.4.duration"),
-    },
-    {
-      title: t("experience.jobs.academia.2.title"),
-      role: t("experience.jobs.academia.2.role"),
-      duration: t("experience.jobs.academia.2.duration"),
+      title: t("experience.jobs.ambassadorships.2.title"),
+      role: t("experience.jobs.ambassadorships.2.role"),
+      duration: t("experience.jobs.ambassadorships.2.duration"),
     },
   ];
 
@@ -119,17 +136,38 @@ const Experience = () => {
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-16 sm:gap-6">
           <div className="col-span-1 sm:col-span-3">
             <Typography variant="subtitle1">
-              {t("experience.academiaTitle")}
+              {t("experience.researchTitle")}
             </Typography>
           </div>
 
           <div className="col-span-1 sm:col-span-9 space-y-6">
-            {academiaJobs.map((job) => (
+            {researchJobs.map((job) => (
               <ExperienceListItem
                 key={job.title}
                 title={job.title}
                 role={job.role}
                 duration={job?.duration}
+                description={job?.description}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-12 gap-16 sm:gap-6">
+          <div className="col-span-1 sm:col-span-3">
+            <Typography variant="subtitle1">
+              {t("experience.ambassadorshipsTitle")}
+            </Typography>
+          </div>
+
+          <div className="col-span-1 sm:col-span-9 space-y-6">
+            {ambassadorshipsJobs.map((job) => (
+              <ExperienceListItem
+                key={job.title}
+                title={job.title}
+                role={job.role}
+                duration={job?.duration}
+                href={job?.href}
               />
             ))}
           </div>

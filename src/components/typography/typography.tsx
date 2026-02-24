@@ -1,4 +1,12 @@
-import type { HTMLAttributes, ReactNode } from "react";
+import {
+  Fragment,
+  cloneElement,
+  isValidElement,
+  type ElementType,
+  type HTMLAttributes,
+  type ReactElement,
+  type ReactNode,
+} from "react";
 import type {
   TypographyColor,
   TypographyColorMapping,
@@ -63,15 +71,57 @@ const typographyDisplayClassNames: TypographyDisplayMapping = {
   block: "block",
 };
 
+function wrapWordsInSpans(node: ReactNode, keyPrefix = ""): ReactNode {
+  if (node == null || typeof node === "boolean") {
+    return node;
+  }
+  if (typeof node === "string") {
+    return node.split(/(\s+)/).map((part, i) =>
+      /\s/.test(part) ? (
+        part
+      ) : (
+        <span key={`${keyPrefix}-${i}`} className="word-hover-scale">
+          {part}
+        </span>
+      )
+    );
+  }
+  if (Array.isArray(node)) {
+    return node.map((child, i) => (
+      <Fragment key={`${keyPrefix}-${i}`}>
+        {wrapWordsInSpans(child, `${keyPrefix}-${i}`)}
+      </Fragment>
+    ));
+  }
+  if (isValidElement(node)) {
+    const el = node as ReactElement<{ children?: ReactNode }>;
+    if (el.props.children != null) {
+      return cloneElement(el, {
+        ...el.props,
+        children: wrapWordsInSpans(el.props.children, keyPrefix),
+      });
+    }
+    return node;
+  }
+  return node;
+}
+
 const Typography = ({
   variant = "body1",
   fontWeight = "normal",
   color = "default",
   display = "inline-block",
-  ...props
+  children,
+  ...rest
 }: TypographyProps) => {
-  const Component = typographyVariantMapping[variant];
+  const Component = typographyVariantMapping[variant] as ElementType;
 
+  const content = wrapWordsInSpans(children);
+
+  const { children: _restChildren, ...restProps } =
+    rest as HTMLAttributes<HTMLElement> & {
+      children?: ReactNode;
+    };
   return (
     <Component
       className={cn(
@@ -80,8 +130,10 @@ const Typography = ({
         typographyColorClassNames[color],
         typographyDisplayClassNames[display]
       )}
-      {...props}
-    />
+      {...restProps}
+    >
+      {content}
+    </Component>
   );
 };
 

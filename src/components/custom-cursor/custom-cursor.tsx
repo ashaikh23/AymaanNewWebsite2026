@@ -6,7 +6,9 @@ import "./custom-cursor.css";
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
-  const animationFrameRef = useRef<number>();
+  const [isOverBlue, setIsOverBlue] = useState(false);
+  const animationFrameRef = useRef<number | null>(null);
+  const wasOverBlueRef = useRef(false);
 
   useEffect(() => {
     let mouseX = 0;
@@ -29,11 +31,17 @@ const CustomCursor = () => {
     };
 
     const animate = () => {
-      // Smooth interpolation with lag effect
-      currentX += (mouseX - currentX) * 0.15;
-      currentY += (mouseY - currentY) * 0.15;
+      currentX += (mouseX - currentX) * 0.38;
+      currentY += (mouseY - currentY) * 0.38;
 
       setPosition({ x: currentX, y: currentY });
+
+      const element = document.elementFromPoint(currentX, currentY);
+      const overBlue = Boolean(element?.closest?.("footer"));
+      if (overBlue !== wasOverBlueRef.current) {
+        wasOverBlueRef.current = overBlue;
+        setIsOverBlue(overBlue);
+      }
 
       animationFrameRef.current = requestAnimationFrame(animate);
     };
@@ -56,7 +64,7 @@ const CustomCursor = () => {
 
   return (
     <div
-      className={`custom-cursor ${isVisible ? "visible" : ""}`}
+      className={`custom-cursor ${isVisible ? "visible" : ""} ${isOverBlue ? "over-blue" : ""}`}
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,

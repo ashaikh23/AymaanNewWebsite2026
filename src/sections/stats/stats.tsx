@@ -4,18 +4,12 @@ import { useTranslations } from "next-intl";
 import { Fragment, type ReactNode } from "react";
 
 import type { Workouts } from "@/lib/hevy";
-import { links } from "@/utils/links";
 
 import { Card, CardContent, CardFooter, CardListItem } from "@/components/card";
 import { Chip } from "@/components/chip";
 import { Divider } from "@/components/divider";
-import { IconButton } from "@/components/icon-button";
 import { Section } from "@/components/section";
-import {
-  SvgIconDumbell,
-  SvgIconGlove,
-  SvgIconHevy,
-} from "@/components/svg-icon";
+import { SvgIconDumbell, SvgIconGlove } from "@/components/svg-icon";
 import { Typography } from "@/components/typography";
 
 type StatsProps = {
@@ -73,11 +67,6 @@ const Stats = ({ workouts }: StatsProps) => {
           </div>
         </CardContent>
         <CardFooter>
-          <a href={links.hevy} target="_blank" rel="noopener noreferrer">
-            <IconButton>
-              <SvgIconHevy size="small" />
-            </IconButton>
-          </a>
           <Chip color="default">
             <Typography variant="body2">
               {t.rich("stats.workouts", {

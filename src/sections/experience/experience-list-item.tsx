@@ -68,7 +68,11 @@ const ExperienceListItem = ({
       </div>
 
       {description && (
-        <Typography variant="body2" color="muted">
+        <Typography
+          variant="body2"
+          color="muted"
+          className="whitespace-pre-line"
+        >
           {description}
         </Typography>
       )}

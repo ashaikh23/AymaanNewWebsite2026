@@ -86,12 +86,12 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     images: "/og-image.webp",
-    site: "@balajmarius",
+    site: "@aymaans23",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://balajmarius.com/",
+    url: `${APP_URL}/`,
     title: copy.metadata.title,
     description: copy.metadata.description,
     images: {
