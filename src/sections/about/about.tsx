@@ -26,6 +26,11 @@ const About = () => {
     serif: (chunks: ReactNode) => (
       <span className="font-serif italic">{chunks}</span>
     ),
+    smaller: (chunks: ReactNode) => (
+      <span className="text-2xl leading-8 sm:text-3xl sm:leading-9">
+        {chunks}
+      </span>
+    ),
     url5: (chunks: ReactNode) => (
       <Link
         href={links.research}
@@ -96,7 +101,7 @@ const About = () => {
                   unoptimized
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center bg-blue-100 text-blue-500 text-2xl sm:text-4xl font-bold">
+                <div className="w-full h-full flex items-center justify-center bg-blue-100 text-blue-500 text-3xl sm:text-5xl font-bold">
                   ?
                 </div>
               )}
@@ -104,7 +109,10 @@ const About = () => {
           </div>
         </div>
 
-        <Typography variant="h1">
+        <Typography
+          variant="h1"
+          className="text-3xl leading-9 sm:text-4xl sm:leading-12"
+        >
           <motion.span className="whitespace-break-spaces">
             {t.rich("about.title", renderers)}
           </motion.span>

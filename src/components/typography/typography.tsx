@@ -41,15 +41,15 @@ const typographyVariantMapping: TypographyVariantMapping = {
 };
 
 const typographyVariantClassNames: TypographyVariantMapping = {
-  h1: "text-3xl leading-12",
-  h2: "text-2xl leading-8 italic font-serif",
-  subtitle1: "text-base leading-6 italic font-serif",
-  subtitle2: "text-base leading-6",
-  body1: "text-base leading-6",
-  body2: "text-sm leading-5",
-  overline: "text-sm leading-5 italic font-serif",
-  caption: "text-xs leading-4 italic font-serif",
-  small: "text-xs leading-4",
+  h1: "text-4xl leading-12",
+  h2: "text-3xl leading-9 italic font-serif",
+  subtitle1: "text-lg leading-7 italic font-serif",
+  subtitle2: "text-lg leading-7",
+  body1: "text-lg leading-7",
+  body2: "text-base leading-6",
+  overline: "text-base leading-6 italic font-serif",
+  caption: "text-sm leading-5 italic font-serif",
+  small: "text-sm leading-5",
 };
 
 const typographyFontWeightClassNames: TypographyFontWeightMapping = {

@@ -158,7 +158,7 @@ const Education = () => {
               <button
                 type="button"
                 onClick={() => setShowAllCoursework((v) => !v)}
-                className="text-sm text-blue-500 hover:text-blue-400 underline underline-offset-4"
+                className="text-base text-blue-500 hover:text-blue-400 underline underline-offset-4"
               >
                 {showAllCoursework
                   ? "Show fewer courses"

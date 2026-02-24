@@ -2,6 +2,7 @@ export { default as SvgIcon, type SvgIconProps } from "./svg-icon";
 export { default as SvgIconArrow } from "./svg-icon-arrow";
 export { default as SvgIconBack } from "./svg-icon-back";
 export { default as SvgIconBranch } from "./svg-icon-branch";
+export { default as SvgIconCamera } from "./svg-icon-camera";
 export { default as SvgIconCheckmark } from "./svg-icon-checkmark";
 export { default as SvgIconClipboard } from "./svg-icon-clipboard";
 export { default as SvgIconDot } from "./svg-icon-dot";

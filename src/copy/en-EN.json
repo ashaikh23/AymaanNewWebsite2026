@@ -10,11 +10,12 @@
     "intro": "Intro",
     "experiences": "Experiences",
     "writings": "Writings",
+    "photography": "Photography",
     "projects": "Projects",
     "contact": "Contact"
   },
   "about": {
-    "title": "<serif><ui><rotating></rotating></ui> engineer</serif> turned <serif>builder</serif>.\nShipping products, <serif>where ML meets real <ai>users</ai></serif>.",
+    "title": "<serif><ui><rotating></rotating></ui> engineer</serif> turned <serif>builder</serif>.\n<smaller>Shipping products, <serif>where ML meets real <ai>users</ai></serif>.</smaller>",
     "viewResume": "View Resume",
     "linkedin": "LinkedIn",
     "github": "GitHub",
@@ -148,31 +149,38 @@
     "entries": {
       "1": {
         "text": "Ranked 98th Percentile - National Cyber League Cyber Skyline Team Cybersecurity CTF Competition",
-        "date": "May 2022"
+        "date": "May 2022",
+        "sortDate": "2022-05"
       },
       "2": {
         "text": "Semi-Finalist - Tenth Annual Difference Maker $50,000 Idea Challenge (ChainBank)",
-        "date": "Mar 2022"
+        "date": "Mar 2022",
+        "sortDate": "2022-03"
       },
       "3": {
         "text": "Difference Maker Digital Federal Credit Union / Manning Innovation Contest Semi-Finalist",
-        "date": "Dec 2021"
+        "date": "Dec 2021",
+        "sortDate": "2021-12"
       },
       "4": {
-        "text": "US Cyber Challenge: Cyber Quests Spring 2025 (U.S. & Global Rank: #20)",
-        "date": "Spring 2025"
+        "text": "US Cyber Challenge: Cyber Quests Spring 2025 (National US Rank #20)",
+        "date": "Mar 2025",
+        "sortDate": "2025-03"
       },
       "5": {
         "text": "Fidelity Investments Design Contest Finalist",
-        "date": "Feb 2023"
+        "date": "Feb 2023",
+        "sortDate": "2023-02"
       },
       "6": {
         "text": "Finalist RSM Automation Challenge (RPA) Competition",
-        "date": "Jan 2022"
+        "date": "Jan 2022",
+        "sortDate": "2022-01"
       },
       "7": {
         "text": "Microsoft Global Intern Hackathon 2025 - 3rd Place",
-        "date": "July 2025"
+        "date": "July 2025",
+        "sortDate": "2025-07"
       }
     }
   },
@@ -196,16 +204,29 @@
     "entries": {
       "1": {
         "name": "Cloud Computing Basics (Cloud 101)",
-        "provider": "Coursera"
+        "provider": "Coursera",
+        "date": "Jun 2020"
       },
       "2": {
         "name": "Managing Machine Learning Projects with Google Cloud",
-        "provider": "Google Cloud Training Online"
+        "provider": "Google Cloud Training Online",
+        "date": "Jul 2020"
+      },
+      "3": {
+        "name": "Serverless Architecture",
+        "provider": "LinkedIn Learning",
+        "date": "Aug 2021"
       }
     }
   },
+  "projects": {
+    "title": "Projects"
+  },
+  "photography": {
+    "title": "Photography"
+  },
   "posts": {
-    "title": "Projects",
+    "title": "Writings",
     "author": " - {author}",
     "moreWritings": "More writings",
     "moreProjects": "More projects",
@@ -233,7 +254,7 @@
     "backToHome": "Back to home"
   },
   "footer": {
-    "intro": "If you're interested in working on a project or communicating with me, don't hesitate to contact me!",
+    "intro": "Interested in working on a project or communicating with me, feel free to contact me.",
     "contact": "Contact",
     "email": "Email",
     "linkedin": "LinkedIn",

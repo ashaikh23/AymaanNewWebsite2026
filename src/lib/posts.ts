@@ -14,6 +14,7 @@ export type Post = {
   author?: string;
   createdAt: Date;
   label: "Book" | "LLMs" | "Dev" | "TIL";
+  externalUrl?: string;
 };
 
 const postsDir = path.join(process.cwd(), "src/content/posts");
@@ -30,7 +31,7 @@ export const getPosts = (limit?: number) => {
       const fileContents = fs.readFileSync(filePath, "utf8");
 
       const {
-        data: { title, createdAt, author, label },
+        data: { title, createdAt, author, label, externalUrl },
       } = matter(fileContents);
 
       return {
@@ -39,6 +40,7 @@ export const getPosts = (limit?: number) => {
         author,
         label,
         slug: fileSlug,
+        externalUrl,
       };
     })
     .sort((post1, post2) => compareDesc(post1.createdAt, post2.createdAt));
@@ -52,9 +54,18 @@ export const getPostSlugs = () => {
   const fileNames = fs
     .readdirSync(postsDir)
     .filter((fileName) => fileName.endsWith(".md"));
-  const fileSlugs = fileNames.map((fileName) => path.parse(fileName).name);
 
-  return fileSlugs;
+  const slugs: string[] = [];
+  for (const fileName of fileNames) {
+    const fileSlug = path.parse(fileName).name;
+    const filePath = path.join(postsDir, fileName);
+    const fileContents = fs.readFileSync(filePath, "utf8");
+    const { data } = matter(fileContents);
+    if (!data.externalUrl) {
+      slugs.push(fileSlug);
+    }
+  }
+  return slugs;
 };
 
 export const getPost = (slug?: string | string[]) => {

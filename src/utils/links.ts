@@ -12,6 +12,8 @@ export const links = {
     "https://www.coursera.org/account/accomplishments/certificate/2LJNQNYQ47XH",
   courseraGoogleCloudML:
     "https://www.coursera.org/account/accomplishments/certificate/VCZNP497CAVE",
+  linkedinLearningServerless:
+    "https://www.linkedin.com/learning/certificates/45897a260cb76486ae04c9a0591033578851c37226531b409847eca02e7b7e1f?trk=backfilled_certificate&accountId=76816458&u=76816458&success=true&authUUID=mxAD9QGwQJSfU0m18y7x6A%3D%3D",
   chainBank: "https://chainbankus.wordpress.com/",
 } as const;
 

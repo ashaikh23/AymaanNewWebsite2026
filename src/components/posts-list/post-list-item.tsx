@@ -21,10 +21,17 @@ type PostListItemProps = {
   author?: string;
   createdAt: Date;
   label: Post["label"];
+  externalUrl?: string;
   active: boolean;
   onMouseEnter: MouseEventHandler<HTMLAnchorElement>;
   onMouseLeave: MouseEventHandler<HTMLAnchorElement>;
 };
+
+const linkClassName = (active: boolean) =>
+  cn(
+    "group flex flex-col sm:flex-row gap-1.5 sm:justify-between py-3 transition-opacity ease-out-exponential",
+    active ? "opacity-100" : "opacity-50"
+  );
 
 const PostListItem = ({
   slug,
@@ -32,20 +39,13 @@ const PostListItem = ({
   author,
   createdAt,
   label,
+  externalUrl,
   active,
   onMouseEnter,
   onMouseLeave,
 }: PostListItemProps) => {
-  return (
-    <Link
-      href={`/writings/${slug}`}
-      className={cn(
-        "group flex flex-col sm:flex-row gap-1.5 sm:justify-between py-3 transition-opacity ease-out-exponential",
-        active ? "opacity-100" : "opacity-50"
-      )}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+  const content = (
+    <>
       <div className="space-x-1 group-hover:text-blue-500">
         <Typography variant="body1" color="inherit" display="inline">
           {title}
@@ -64,6 +64,32 @@ const PostListItem = ({
 
         <Chip color={chipColorLabel[label]}>{label}</Chip>
       </div>
+    </>
+  );
+
+  if (externalUrl) {
+    return (
+      <a
+        href={externalUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={linkClassName(active)}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <Link
+      href={`/writings/${slug}`}
+      className={linkClassName(active)}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      {content}
     </Link>
   );
 };

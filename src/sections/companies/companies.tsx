@@ -173,7 +173,7 @@ const Companies = () => {
                       />
                     )
                   ) : (
-                    <div className="text-gray-400 font-medium text-sm text-center">
+                    <div className="text-gray-400 font-medium text-base text-center">
                       {company.name}
                     </div>
                   )}

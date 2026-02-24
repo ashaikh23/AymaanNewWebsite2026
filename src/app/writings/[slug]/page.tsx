@@ -22,7 +22,7 @@ const renderers = {
     />
   ),
   h2: (props: ComponentProps<"h2">) => (
-    <h2 className="pt-8 text-xl font-medium" {...props} />
+    <h2 className="pt-8 text-2xl font-medium" {...props} />
   ),
   h3: (props: ComponentProps<"h3">) => (
     <h3 className="pt-4 font-medium" {...props} />
@@ -34,7 +34,7 @@ const renderers = {
     <pre className="overflow-auto rounded-lg bg-gray-200 p-3" {...props} />
   ),
   code: (props: ComponentProps<"code">) => (
-    <code className="font-roboto-mono text-md text-blue-500" {...props} />
+    <code className="font-roboto-mono text-lg text-blue-500" {...props} />
   ),
   ul: (props: ComponentProps<"ul">) => (
     <ul className="list-none space-y-3 pl-6" {...props} />
@@ -49,6 +49,9 @@ const renderers = {
 
 export const generateStaticParams = () => {
   const slugs = getPostSlugs();
+  if (slugs.length === 0) {
+    return [{ slug: "__no_internal_posts__" }];
+  }
   return slugs.map((slug) => ({ slug }));
 };
 
@@ -56,6 +59,9 @@ export const generateMetadata = async ({
   params,
 }: PostPageProps): Promise<Metadata> => {
   const { slug } = await params;
+  if (slug === "__no_internal_posts__") {
+    return { title: "Not Found" };
+  }
   const post = getPost(slug);
 
   return {
@@ -65,6 +71,9 @@ export const generateMetadata = async ({
 
 const PostPage = async ({ params }: PostPageProps) => {
   const { slug } = await params;
+  if (slug === "__no_internal_posts__") {
+    notFound();
+  }
   const post = getPost(slug);
 
   if (isNullOrUndefined(post)) {

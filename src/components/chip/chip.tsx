@@ -39,7 +39,7 @@ const Chip = ({ children, variant = "default", color = "info" }: ChipProps) => {
   return (
     <div
       className={cn(
-        "rounded-3xl px-3 py-0.5 text-sm text-gray-600",
+        "rounded-3xl px-3 py-0.5 text-base text-gray-600",
         chipColorClassNames[color],
         chipVariantClassNames[variant]
       )}

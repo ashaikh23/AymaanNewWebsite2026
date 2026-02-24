@@ -11,6 +11,13 @@ export default withNextIntl(
     pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
     images: {
       unoptimized: true,
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "placehold.co",
+          pathname: "/**",
+        },
+      ],
     },
   })
 );

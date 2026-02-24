@@ -12,6 +12,7 @@ import { appBarAnimation } from "@/utils/keyframes";
 
 import { Button } from "@/components/button";
 import {
+  SvgIconCamera,
   SvgIconGlobe,
   SvgIconHouse,
   SvgIconM,
@@ -41,6 +42,16 @@ const AppBar = ({ ...props }: HTMLAttributes<HTMLElement>) => {
       href: "/#experience",
       label: t("appBar.experiences"),
       icon: <SvgIconTrophy size="small" />,
+    },
+    {
+      href: "/#posts",
+      label: t("appBar.writings"),
+      icon: <SvgIconNotepad size="small" />,
+    },
+    {
+      href: "/#photography",
+      label: t("appBar.photography"),
+      icon: <SvgIconCamera size="small" />,
     },
     {
       href: "/projects",

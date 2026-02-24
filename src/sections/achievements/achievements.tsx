@@ -8,18 +8,20 @@ import { Section } from "@/components/section";
 import { Typography } from "@/components/typography";
 import { links } from "@/utils/links";
 
-// Ordered newest (top) to oldest (bottom)
-const achievementsKeys = ["4", "7", "5", "1", "2", "6", "3"] as const;
+const achievementKeys = ["1", "2", "3", "4", "5", "6", "7"] as const;
 
 const Achievements = () => {
   const t = useTranslations();
 
-  const achievements = achievementsKeys.map((key) => ({
-    key,
-    text: t(`achievements.entries.${key}.text`),
-    date: t(`achievements.entries.${key}.date`),
-    ...(key === "2" ? { linkText: "ChainBank", href: links.chainBank } : {}),
-  }));
+  const achievements = achievementKeys
+    .map((key) => ({
+      key,
+      text: t(`achievements.entries.${key}.text`),
+      date: t(`achievements.entries.${key}.date`),
+      sortDate: t(`achievements.entries.${key}.sortDate`),
+      ...(key === "2" ? { linkText: "ChainBank", href: links.chainBank } : {}),
+    }))
+    .sort((a, b) => (b.sortDate < a.sortDate ? -1 : 1));
 
   return (
     <Section id="achievements">

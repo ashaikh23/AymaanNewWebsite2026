@@ -19,7 +19,7 @@ const Projects = ({ projects }: ProjectsProps) => {
   return (
     <Section id="projects">
       <div className="space-y-16">
-        <Typography variant="subtitle1">{t("posts.title")}</Typography>
+        <Typography variant="subtitle1">{t("projects.title")}</Typography>
 
         <div className="space-y-6">
           <ProjectsList projects={projects} />

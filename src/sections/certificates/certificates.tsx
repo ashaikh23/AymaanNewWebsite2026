@@ -12,14 +12,22 @@ const Certificates = () => {
 
   const certificates = [
     {
-      name: t("certificates.entries.1.name"),
-      provider: t("certificates.entries.1.provider"),
-      href: links.courseraCloud101,
+      name: t("certificates.entries.3.name"),
+      provider: t("certificates.entries.3.provider"),
+      date: t("certificates.entries.3.date"),
+      href: links.linkedinLearningServerless,
     },
     {
       name: t("certificates.entries.2.name"),
       provider: t("certificates.entries.2.provider"),
+      date: t("certificates.entries.2.date"),
       href: links.courseraGoogleCloudML,
+    },
+    {
+      name: t("certificates.entries.1.name"),
+      provider: t("certificates.entries.1.provider"),
+      date: t("certificates.entries.1.date"),
+      href: links.courseraCloud101,
     },
   ];
 
@@ -49,6 +57,7 @@ const Certificates = () => {
                 </Typography>
                 <Typography variant="body2" color="muted">
                   {cert.provider}
+                  {cert.date ? ` · Issued ${cert.date}` : null}
                 </Typography>
               </div>
             </Link>
