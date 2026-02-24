@@ -7,6 +7,7 @@ const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
   const [isOverBlue, setIsOverBlue] = useState(false);
+  const [isDevToolsOpen, setIsDevToolsOpen] = useState(false);
   const animationFrameRef = useRef<number | null>(null);
   const wasOverBlueRef = useRef(false);
 
@@ -43,6 +44,10 @@ const CustomCursor = () => {
         setIsOverBlue(overBlue);
       }
 
+      const devtoolsOpen =
+        document.documentElement.hasAttribute("data-devtools-open");
+      setIsDevToolsOpen(devtoolsOpen);
+
       animationFrameRef.current = requestAnimationFrame(animate);
     };
 
@@ -64,7 +69,7 @@ const CustomCursor = () => {
 
   return (
     <div
-      className={`custom-cursor ${isVisible ? "visible" : ""} ${isOverBlue ? "over-blue" : ""}`}
+      className={`custom-cursor ${isVisible ? "visible" : ""} ${isOverBlue ? "over-blue" : ""} ${isDevToolsOpen ? "devtools-open" : ""}`}
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,

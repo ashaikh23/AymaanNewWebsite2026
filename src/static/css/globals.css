@@ -54,7 +54,7 @@
   color: white;
 }
 
-[data-devtools-open] body > * {
+[data-devtools-open] body > *:not(.custom-cursor) {
   opacity: 0 !important;
   pointer-events: none !important;
 }

@@ -22,6 +22,28 @@
   background-color: white;
 }
 
+/* DevTools open: cursor cycles through colors */
+@keyframes cursor-color-cycle {
+  0%,
+  100% {
+    background-color: #0e63ff;
+  }
+  25% {
+    background-color: #1ed760;
+  }
+  50% {
+    background-color: #f05222;
+  }
+  75% {
+    background-color: #f0dcff;
+  }
+}
+
+.custom-cursor.devtools-open {
+  opacity: 1 !important;
+  animation: cursor-color-cycle 2s ease-in-out infinite;
+}
+
 /* Hide default cursor */
 * {
   cursor: none !important;
