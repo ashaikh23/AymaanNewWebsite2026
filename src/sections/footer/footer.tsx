@@ -27,7 +27,7 @@ const Footer = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
         className="py-16 bg-blue-500 text-blue-100 selection:bg-blue-100 selection:text-blue-500"
         {...props}
       >
-        <div className="mr-auto w-full max-w-xl px-6 sm:px-12 space-y-24">
+        <div className="mx-auto w-full max-w-xl px-6 sm:px-12 space-y-24">
           <div className="space-y-8">
             <Typography variant="body2" color="inherit">
               {t("footer.intro")}
